@@ -1,22 +1,22 @@
 package org.example;
 
 public class Player {
-    private Kolor kolor;
+    private Color kolor;
     private double speed;
     private double jump;
     private int kondycja;
 
-    public Player(Kolor kolor, double speed, double jump, int kondycja) {
+    public Player(Color kolor, double speed, double jump, int kondycja) {
         this.kolor = kolor;
         this.speed = speed;
         this.jump = jump;
         this.kondycja = kondycja;
     }
 
-    public Kolor getKolor() {
+    public Color getKolor() {
         return kolor;
     }
-    public void setKolor(Kolor kolor) {
+    public void setKolor(Color kolor) {
         this.kolor = kolor;
     }
     public double getSpeed() {
