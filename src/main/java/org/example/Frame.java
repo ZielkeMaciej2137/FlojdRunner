@@ -1,4 +1,4 @@
-package org.example;
+/*package org.example;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,3 +23,4 @@ public class Frame extends javax.swing.JFrame {
         frame.setVisible(true);
     }
 }
+*/
