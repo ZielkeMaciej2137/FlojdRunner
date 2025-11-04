@@ -1,45 +1,16 @@
 package org.example;
 
-public class Player {
-    private Color kolor;
-    private double speed;
-    private double jump;
-    private int kondycja;
+public class Player extends Movable {
+    private SkinColor skinColor;
 
-    public Player(Color kolor, double speed, double jump, int kondycja) {
-        this.kolor = kolor;
-        this.speed = speed;
-        this.jump = jump;
-        this.kondycja = kondycja;
+    public Player(SkinColor skinColor, double speed, double jump) {
+        super(speed, jump);
+        this.skinColor = skinColor;
     }
 
-    public Color getKolor() {
-        return kolor;
-    }
-    public void setKolor(Color kolor) {
-        this.kolor = kolor;
-    }
-    public double getSpeed() {
-        return speed;
-    }
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-    public double getJump() {
-        return jump;
-    }
-    public void setJump(double jump) {
-        this.jump = jump;
-    }
-    public int getKondycja() {
-        return kondycja;
-    }
-    public void setKondycja(int kondycja) {
-        this.kondycja = kondycja;
-    }
+    public SkinColor getSkinColor() {return skinColor;}
 
-
-
+    public void setSkinColor(SkinColor skinColor) {this.skinColor = skinColor;}
 
 }
 

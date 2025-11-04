@@ -1,9 +1,9 @@
 package org.example;
 
-public enum Color {
-    WHITE,
+public enum SkinColor {
     WHITE_PALE,
-    MEXICAN,
+    WHITE,
     TANNED,
+    MEXICAN,
     BLACK
 }
