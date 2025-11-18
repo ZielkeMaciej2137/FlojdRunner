@@ -1,22 +1,35 @@
 package org.example;
 
+import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Player {
-    private Color kolor;
+    private SkinColor kolor;
     private double speed;
     private double jump;
     private int kondycja;
+    public static final Map<SkinColor, Color> koloryTablica = new HashMap<SkinColor, Color>();
 
-    public Player(Color kolor, double speed, double jump, int kondycja) {
+    static {
+    koloryTablica.put(SkinColor.WHITE, Color.WHITE);
+    koloryTablica.put(SkinColor.WHITE_PALE, new java.awt.Color(232, 232, 232));
+    koloryTablica.put(SkinColor.MEXICAN, new java.awt.Color(205, 133, 63));
+    koloryTablica.put(SkinColor.TANNED, new java.awt.Color(210, 180, 140));
+    koloryTablica.put(SkinColor.BLACK, Color.BLACK);
+    }
+
+    public Player(SkinColor kolor, double speed, double jump, int kondycja) {
         this.kolor = kolor;
         this.speed = speed;
         this.jump = jump;
         this.kondycja = kondycja;
     }
 
-    public Color getKolor() {
+    public SkinColor getKolor() {
         return kolor;
     }
-    public void setKolor(Color kolor) {
+    public void setKolor(SkinColor kolor) {
         this.kolor = kolor;
     }
     public double getSpeed() {
