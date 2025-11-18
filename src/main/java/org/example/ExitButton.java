@@ -4,30 +4,33 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-public class ExitButton extends JFrame {
+public class ExitButton extends JButton {
+
+
 
     public ExitButton() {
-        setTitle("Aplikacja z przyciskiem wyjścia");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        JButton exitButton = new JButton("Wyjście");
-
-        exitButton.setFont(new Font("Arial", Font.BOLD, 16));
-        exitButton.setBackground(java.awt.Color.RED);
-        exitButton.setForeground(java.awt.Color.WHITE);
+        super("<html><img src='file:C:\\Users\\uczen\\Desktop\\FlojdRunner-adam\\FlojdRunner-adam\\src\\main\\java\\org\\example\\logoutIcon.png'></html>");
+        setPreferredSize(new Dimension(50, 50));
 
 
-        exitButton.addActionListener(new ActionListener() {
+        setFont(new Font("Arial", Font.BOLD, 16));
+        setBackground(java.awt.Color.RED);
+        setForeground(java.awt.Color.WHITE);
+
+
+
+
+        addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
         });
 
-        add(exitButton, BorderLayout.CENTER);
+
     }
 
     public static void main(String[] args) {
