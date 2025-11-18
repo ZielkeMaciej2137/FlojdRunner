@@ -31,32 +31,47 @@ class Level1 {
         addRect(L, 2, 16, 2, 1, TileKind.GROUND);
         addRect(L, 6, 16, 3, 1, TileKind.GROUND);
         addRect(L, 11, 16, 2, 1, TileKind.GROUND);
-        addRect(L, 27, 16, 3, 1, TileKind.GROUND);
+        addRect(L, 24, 16, 3, 1, TileKind.GROUND);
         addRect(L, 33, 16, 2, 1, TileKind.GROUND);
 
-        addRect(L, 1, 10, 1, 7, TileKind.PIPE);
+        addRect(L, 0, 10, 1, 7, TileKind.PIPE);
         addRect(L, 4, 12, 1, 5, TileKind.PIPE);
+        addRect(L, 10, 13, 4, 1, TileKind.BRICK);
 
         addRect(L, 3, 9, 2, 1, TileKind.BRICK);
         addRect(L, 6, 7, 3, 1, TileKind.BRICK);
         addRect(L, 9, 10, 4, 1, TileKind.BRICK);
+        addRect(L, 10, 5, 5, 1, TileKind.BRICK);
 
         addRect(L, 19, 9, 1, 8, TileKind.PIPE);
         addRect(L, 20, 13, 2, 1, TileKind.BRICK);
+        addRect(L, 16, 7, 2, 1, TileKind.BRICK);
 
         addRect(L, 16, 11, 3, 1, TileKind.BRICK);
-        addRect(L, 23, 10, 3, 1, TileKind.BRICK);
-        addRect(L, 21, 6, 1, 3, TileKind.PIPE);
+        addRect(L, 24, 10, 3, 1, TileKind.BRICK);
+        addRect(L, 22, 6, 1, 3, TileKind.PIPE);
 
-        addRect(L, 24, 5, 6, 1, TileKind.BRICK);
+        addRect(L, 25, 5, 6, 1, TileKind.BRICK);
         addRect(L, 29, 9, 2, 1, TileKind.BRICK);
         addRect(L, 32, 8, 1, 4, TileKind.PIPE);
-        addRect(L, 34, 12, 4, 1, TileKind.BRICK);
+        addRect(L, 35, 12, 2, 1, TileKind.BRICK);
 
         addRect(L, 15, 16, 1, 1, TileKind.SPIKE);
         addRect(L, 30, 16, 1, 1, TileKind.SPIKE);
 
-        addRect(L, 38, 6, 1, 11, TileKind.GOAL);
+        addRect(L, 39, 6, 1, 11, TileKind.PIPE);
+        addRect(L, 26, 13, 2, 1, TileKind.BRICK);
+        addRect(L, 20, 13, 2, 1, TileKind.BRICK);
+        addRect(L, 34, 5, 2, 1, TileKind.BRICK);
+
+        addRect(L, 0, 2, 1, 5, TileKind.PIPE);
+        addRect(L, 4, 3, 2, 1, TileKind.BRICK);
+        addRect(L, 12, 2, 1, 3, TileKind.PIPE);
+        addRect(L, 19, 2, 1, 3, TileKind.PIPE);
+        addRect(L, 20, 2, 3, 1, TileKind.BRICK);
+        addRect(L, 27, 0, 1, 3, TileKind.PIPE);
+        addRect(L, 32, 2, 4, 1, TileKind.BRICK);
+
 
         return L;
     }
