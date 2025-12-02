@@ -66,8 +66,8 @@ public class ChaseGame extends JPanel implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         if (!gameOver) {
             updatePlayer();
-            updatePolice();
-            checkCollision();
+            //updatePolice();
+            //checkCollision();
         }
         repaint();
     }
