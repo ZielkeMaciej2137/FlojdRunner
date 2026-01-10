@@ -1,58 +1,61 @@
 package org.example;
 
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class Player {
-    private SkinColor kolor;
+
+    private Difficulty difficulty;
     private double speed;
     private double jump;
-    private int kondycja;
-    public static final Map<SkinColor, Color> koloryTablica = new HashMap<SkinColor, Color>();
+    private int stamina;
 
-    static {
-    koloryTablica.put(SkinColor.WHITE, Color.WHITE);
-    koloryTablica.put(SkinColor.WHITE_PALE, new java.awt.Color(232, 232, 232));
-    koloryTablica.put(SkinColor.MEXICAN, new java.awt.Color(205, 133, 63));
-    koloryTablica.put(SkinColor.TANNED, new java.awt.Color(210, 180, 140));
-    koloryTablica.put(SkinColor.BLACK, Color.BLACK);
+    public Player(Difficulty difficulty) {
+        this.difficulty = difficulty;
+        applyDifficultyStats();
     }
 
-    public Player(SkinColor kolor, double speed, double jump, int kondycja) {
-        this.kolor = kolor;
-        this.speed = speed;
-        this.jump = jump;
-        this.kondycja = kondycja;
+    /**
+     * Ustawia statystyki na podstawie trudności
+     */
+    private void applyDifficultyStats() {
+        switch (difficulty) {
+            case EASY -> {
+                speed = 4.0;
+                jump = 8.0;
+                stamina = 150;
+            }
+            case NORMAL -> {
+                speed = 5.0;
+                jump = 7.0;
+                stamina = 120;
+            }
+            case HARD -> {
+                speed = 6.0;
+                jump = 6.0;
+                stamina = 90;
+            }
+            case INSANE -> {
+                speed = 7.5;
+                jump = 5.0;
+                stamina = 60;
+            }
+        }
     }
 
-    public SkinColor getKolor() {
-        return kolor;
-    }
-    public void setKolor(SkinColor kolor) {
-        this.kolor = kolor;
-    }
-    public double getSpeed() {
-        return speed;
-    }
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-    public double getJump() {
-        return jump;
-    }
-    public void setJump(double jump) {
-        this.jump = jump;
-    }
-    public int getKondycja() {
-        return kondycja;
-    }
-    public void setKondycja(int kondycja) {
-        this.kondycja = kondycja;
+    /**
+     * Zwraca kolor gracza zależny od trudności
+     */
+    public Color getPlayerColor() {
+        return switch (difficulty) {
+            case EASY -> GameColor.EASY_COLOR.getAwtColor();
+            case NORMAL -> GameColor.NORMAL_COLOR.getAwtColor();
+            case HARD -> GameColor.HARD_COLOR.getAwtColor();
+            case INSANE -> GameColor.INSANE_COLOR.getAwtColor();
+        };
     }
 
-
-
-
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
 }
-
