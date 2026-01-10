@@ -2,40 +2,40 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.net.MalformedURLException;
-import java.net.URL;
 
+
+/**
+ * Uniwersalny przycisk wyjścia z gry
+ * Może być używany w menu, pauzie, ekranie śmierci itp.
+ */
 public class ExitButton extends JButton {
 
+    private final Color normalColor = new Color(180, 50, 50);
 
 
     public ExitButton() {
-        super("<html><img src='file:C:\\Users\\uczen\\Desktop\\FlojdRunner-adam\\FlojdRunner-adam\\src\\main\\java\\org\\example\\logoutIcon.png'></html>");
-        setPreferredSize(new Dimension(50, 50));
+
+        // ===== IKONA =====
+        ImageIcon icon = new ImageIcon(
+                getClass().getResource("/logoutIcon.png")
+        );
+
+        Image scaled = icon.getImage()
+                .getScaledInstance(24, 24, Image.SCALE_SMOOTH);
+
+        setIcon(new ImageIcon(scaled));
+
+        // ===== WYGLĄD =====
+        setBackground(normalColor);
+        setOpaque(true);                 // rysuj tło
+        setBorderPainted(false);
+        setFocusPainted(false);
+        setContentAreaFilled(true);
+        setPreferredSize(new Dimension(48, 48));
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 
-        setFont(new Font("Arial", Font.BOLD, 16));
-        setBackground(java.awt.Color.RED);
-        setForeground(java.awt.Color.WHITE);
-
-
-
-
-        addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-
-
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new ExitButton().setVisible(true);
-        });
+        // ===== DZIAŁANIE =====
+        addActionListener(e -> System.exit(0));
     }
 }
